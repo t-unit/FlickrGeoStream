@@ -87,8 +87,14 @@ extension LocationController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard isRunning else {
+            stop()
+            return
+        }
+
         locations.forEach { handle(location: $0) }
         startMonitoring(withCoordinate: locations.last!.coordinate)
+        print("started monitoring with center: \(locations.last!.coordinate)")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

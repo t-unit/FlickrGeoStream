@@ -41,7 +41,7 @@ struct ImageManager {
                     let values1 = try url1.resourceValues(forKeys: keys)
                     let values2 = try url2.resourceValues(forKeys: keys)
                     
-                    return values1.creationDate! < values2.creationDate!
+                    return values1.creationDate! > values2.creationDate!
                 }
                 
                 var images = [UIImage]()
@@ -67,11 +67,12 @@ struct ImageManager {
         operationQueue.async {
             let data = UIImageJPEGRepresentation(image, 0.7)
             let path = self.documentsDirectory.appendingPathComponent("\(UUID().uuidString).jpg")
-
-            if self.fileManager.createFile(atPath: path.absoluteString, contents: data, attributes: nil) {
+            
+            do {
+                try data?.write(to: path)
                 self.notificationCenter.post(name: .ImageManagerAddedImage, object: self)
-            } else {
-                print("failed saving image to disk")
+            } catch {
+                print("failed saving image to disk: \(error)")
             }
         }
     }

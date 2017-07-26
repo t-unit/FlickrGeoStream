@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2D738EA1F2788B800634180 /* FlickrSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D738E91F2788B800634180 /* FlickrSearchResult.swift */; };
+		D2D738EE1F27984300634180 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D738ED1F27984300634180 /* ImageService.swift */; };
+		D2D738F21F279A3600634180 /* FlickrImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D738F11F279A3600634180 /* FlickrImageService.swift */; };
+		D2D738F41F279B8E00634180 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D738F31F279B8E00634180 /* LocationController.swift */; };
 		D2F630911F277F7B0039B7A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F630901F277F7B0039B7A1 /* AppDelegate.swift */; };
 		D2F630931F277F7B0039B7A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F630921F277F7B0039B7A1 /* ViewController.swift */; };
 		D2F630961F277F7B0039B7A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F630941F277F7B0039B7A1 /* Main.storyboard */; };
 		D2F630981F277F7B0039B7A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F630971F277F7B0039B7A1 /* Assets.xcassets */; };
 		D2F6309B1F277F7B0039B7A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F630991F277F7B0039B7A1 /* LaunchScreen.storyboard */; };
 		D2F630A61F277F7B0039B7A1 /* FlickrGeoStreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F630A51F277F7B0039B7A1 /* FlickrGeoStreamTests.swift */; };
+		D2F630B11F2784C00039B7A1 /* FlickrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F630B01F2784C00039B7A1 /* FlickrService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2D738E91F2788B800634180 /* FlickrSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchResult.swift; sourceTree = "<group>"; };
+		D2D738ED1F27984300634180 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		D2D738F11F279A3600634180 /* FlickrImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageService.swift; sourceTree = "<group>"; };
+		D2D738F31F279B8E00634180 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		D2F6308D1F277F7B0039B7A1 /* FlickrGeoStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrGeoStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F630901F277F7B0039B7A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2F630921F277F7B0039B7A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +45,7 @@
 		D2F630A11F277F7B0039B7A1 /* FlickrGeoStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrGeoStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F630A51F277F7B0039B7A1 /* FlickrGeoStreamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrGeoStreamTests.swift; sourceTree = "<group>"; };
 		D2F630A71F277F7B0039B7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F630B01F2784C00039B7A1 /* FlickrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2D738E81F2788A700634180 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2D738E91F2788B800634180 /* FlickrSearchResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2D738EF1F27997A00634180 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D2D738F11F279A3600634180 /* FlickrImageService.swift */,
+				D2F630B01F2784C00039B7A1 /* FlickrService.swift */,
+				D2D738ED1F27984300634180 /* ImageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D2D738F01F279A2B00634180 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2D738F31F279B8E00634180 /* LocationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		D2F630841F277F7B0039B7A1 = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +113,15 @@
 		D2F6308F1F277F7B0039B7A1 /* FlickrGeoStream */ = {
 			isa = PBXGroup;
 			children = (
+				D2D738F01F279A2B00634180 /* Controllers */,
+				D2D738E81F2788A700634180 /* Models */,
 				D2F630901F277F7B0039B7A1 /* AppDelegate.swift */,
 				D2F630921F277F7B0039B7A1 /* ViewController.swift */,
 				D2F630941F277F7B0039B7A1 /* Main.storyboard */,
 				D2F630971F277F7B0039B7A1 /* Assets.xcassets */,
 				D2F630991F277F7B0039B7A1 /* LaunchScreen.storyboard */,
 				D2F6309C1F277F7B0039B7A1 /* Info.plist */,
+				D2D738EF1F27997A00634180 /* Services */,
 			);
 			path = FlickrGeoStream;
 			sourceTree = "<group>";
@@ -199,6 +238,11 @@
 			files = (
 				D2F630931F277F7B0039B7A1 /* ViewController.swift in Sources */,
 				D2F630911F277F7B0039B7A1 /* AppDelegate.swift in Sources */,
+				D2F630B11F2784C00039B7A1 /* FlickrService.swift in Sources */,
+				D2D738EE1F27984300634180 /* ImageService.swift in Sources */,
+				D2D738EA1F2788B800634180 /* FlickrSearchResult.swift in Sources */,
+				D2D738F21F279A3600634180 /* FlickrImageService.swift in Sources */,
+				D2D738F41F279B8E00634180 /* LocationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +470,7 @@
 				D2F630AC1F277F7B0039B7A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2F630AD1F277F7B0039B7A1 /* Build configuration list for PBXNativeTarget "FlickrGeoStreamTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +479,7 @@
 				D2F630AF1F277F7B0039B7A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

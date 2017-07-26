@@ -29,9 +29,14 @@ class FlickrService {
                 self.callbackQueue.async { completionHandler(nil) }
                 return
             }
-
-            let searchResult = try? self.decoder.decode(FlickrSearchResult.self, from: data)
-            self.callbackQueue.async { completionHandler(searchResult) }
+            
+            do {
+                let searchResult = try self.decoder.decode(FlickrSearchResult.self, from: data)
+                self.callbackQueue.async { completionHandler(searchResult) }
+            } catch {
+                print(error)
+                self.callbackQueue.async { completionHandler(nil) }
+            }
         })
         
         task.resume()
@@ -46,6 +51,7 @@ class FlickrService {
             URLQueryItem(name: "nojsoncallback", value: "1"),
             URLQueryItem(name: "method", value: "flickr.photos.search"),
             URLQueryItem(name: "per_page", value: "1"),
+            URLQueryItem(name: "extras", value: "url_m"),
             URLQueryItem(name: "lat", value: String(coordinate.latitude)),
             URLQueryItem(name: "lon", value: String(coordinate.longitude))
         ]

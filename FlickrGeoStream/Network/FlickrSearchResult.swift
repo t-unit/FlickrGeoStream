@@ -10,6 +10,15 @@ import Foundation
 
 struct FlickrSearchResult: Decodable {
     
+    struct PhotoList: Decodable {
+        
+        private enum CodingKeys: String, CodingKey {
+            case photos = "photo"
+        }
+        
+        let photos: [Photo]
+    }
+    
     struct Photo: Decodable {
 
         private enum CodingKeys: String, CodingKey {
@@ -18,10 +27,6 @@ struct FlickrSearchResult: Decodable {
 
         let url: URL
     }
-
-    private enum CodingKeys: String, CodingKey {
-        case photos = "photo"
-    }
     
-    let photos: [Photo]
+    let photos: PhotoList
 }

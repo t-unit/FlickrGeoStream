@@ -25,7 +25,7 @@ struct FlickrImageService {
     
     func fetch(coordinate: CLLocationCoordinate2D, completionHandler: @escaping (UIImage?) -> Void) {
         searchService.search(coordinate: coordinate) {
-            guard let photo = $0?.photos.first else {
+            guard let photo = $0?.photos.photos.first else {
                 completionHandler(nil)
                 return
             }

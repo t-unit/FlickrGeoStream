@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let locationController = LocationController(apiKey: "<FLICKR API key goes here>")
+    let locationController = LocationController(apiKey: "971d0029979595eb35c8449c89b88107")
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

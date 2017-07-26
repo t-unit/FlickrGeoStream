@@ -8,10 +8,13 @@
 
 import UIKit
 
-class PhotoStreamViewModel {
+class PhotoStreamViewModel: NSObject {
 
-    private(set) var isRunning = false
-    private(set) var images: [UIImage] = []
+    @objc
+    dynamic private(set) var isRunning = false
+
+    @objc
+    dynamic private(set) var images: [UIImage] = []
 
     private let notificationCenter = NotificationCenter.default
     private let locationController: LocationController
@@ -23,15 +26,23 @@ class PhotoStreamViewModel {
         self.locationController = locationController
         self.imageManager = imageManager
 
+        super.init()
+        
         registerObservers()
         updateImages()
         updateRunning()
+    }
+    
+    convenience override init() {
+        let locationController = (UIApplication.shared.delegate as! AppDelegate).locationController
+        let imageManager = ImageManager()
+        self.init(locationController: locationController, imageManager: imageManager)
     }
 
     deinit {
         observers.forEach { notificationCenter.removeObserver($0) }
     }
-    
+
     func toggleRunning() {
         if locationController.isRunning {
             locationController.stop()
@@ -41,7 +52,7 @@ class PhotoStreamViewModel {
 
         updateRunning()
     }
-    
+
     private func registerObservers() {
         let queue = OperationQueue.main
 
@@ -50,14 +61,14 @@ class PhotoStreamViewModel {
             self?.updateImages()
         }
         observers.append(addedObserver)
-        
+
         let changeName = Notification.Name.LocationControllerRunningChanged
         let changeObserver = notificationCenter.addObserver(forName: changeName, object: locationController, queue: queue) { [weak self] _ in
             self?.updateRunning()
         }
         observers.append(changeObserver)
     }
-    
+
     private func updateImages() {
         imageManager.get { [weak self] in
             self?.images = $0

@@ -89,4 +89,9 @@ extension LocationController: CLLocationManagerDelegate {
         locations.forEach { handle(location: $0) }
         startMonitoring(withCoordinate: locations.last!.coordinate)
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+        stop()  // should inform user at this point
+    }
 }

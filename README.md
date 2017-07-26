@@ -9,3 +9,5 @@
 * Although the code is organised in a way that writing units should be easy, I did not write any tests to keep it somewhat in the two hour limit.
 
 * The way images are currently fetchted from Flickr does return a lot of duplicates. There is currently no functionality to not display any duplicates.
+
+* Refreshing the UI is not done very good. Instead of just adding a single image to the top, the complete list is updated

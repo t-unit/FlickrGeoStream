@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D29D67EF1F288D9B00389F90 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29D67EE1F288D9B00389F90 /* ImageManager.swift */; };
+		D2D4CB691F2896B8001699D9 /* PhotoStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D4CB681F2896B8001699D9 /* PhotoStreamViewModel.swift */; };
 		D2D738EA1F2788B800634180 /* FlickrSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D738E91F2788B800634180 /* FlickrSearchResult.swift */; };
 		D2D738EE1F27984300634180 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D738ED1F27984300634180 /* ImageService.swift */; };
 		D2D738F21F279A3600634180 /* FlickrImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D738F11F279A3600634180 /* FlickrImageService.swift */; };
 		D2D738F41F279B8E00634180 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D738F31F279B8E00634180 /* LocationController.swift */; };
 		D2F630911F277F7B0039B7A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F630901F277F7B0039B7A1 /* AppDelegate.swift */; };
-		D2F630931F277F7B0039B7A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F630921F277F7B0039B7A1 /* ViewController.swift */; };
+		D2F630931F277F7B0039B7A1 /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F630921F277F7B0039B7A1 /* PhotoStreamViewController.swift */; };
 		D2F630961F277F7B0039B7A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F630941F277F7B0039B7A1 /* Main.storyboard */; };
 		D2F630981F277F7B0039B7A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F630971F277F7B0039B7A1 /* Assets.xcassets */; };
 		D2F6309B1F277F7B0039B7A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F630991F277F7B0039B7A1 /* LaunchScreen.storyboard */; };
@@ -31,13 +33,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D29D67EE1F288D9B00389F90 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		D2D4CB681F2896B8001699D9 /* PhotoStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModel.swift; sourceTree = "<group>"; };
 		D2D738E91F2788B800634180 /* FlickrSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchResult.swift; sourceTree = "<group>"; };
 		D2D738ED1F27984300634180 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		D2D738F11F279A3600634180 /* FlickrImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageService.swift; sourceTree = "<group>"; };
 		D2D738F31F279B8E00634180 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		D2F6308D1F277F7B0039B7A1 /* FlickrGeoStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrGeoStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F630901F277F7B0039B7A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2F630921F277F7B0039B7A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2F630921F277F7B0039B7A1 /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
 		D2F630951F277F7B0039B7A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2F630971F277F7B0039B7A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2F6309A1F277F7B0039B7A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,30 +70,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D2D738E81F2788A700634180 /* Models */ = {
+		D2D4CB671F28967B001699D9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D2F630941F277F7B0039B7A1 /* Main.storyboard */,
+				D2F630921F277F7B0039B7A1 /* PhotoStreamViewController.swift */,
+				D2D4CB681F2896B8001699D9 /* PhotoStreamViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D2D4CB6A1F2897C6001699D9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D2F630971F277F7B0039B7A1 /* Assets.xcassets */,
+				D2F630901F277F7B0039B7A1 /* AppDelegate.swift */,
+				D2F6309C1F277F7B0039B7A1 /* Info.plist */,
+				D2F630991F277F7B0039B7A1 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D2D738EF1F27997A00634180 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				D2D738E91F2788B800634180 /* FlickrSearchResult.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		D2D738EF1F27997A00634180 /* Services */ = {
-			isa = PBXGroup;
-			children = (
 				D2D738F11F279A3600634180 /* FlickrImageService.swift */,
 				D2F630B01F2784C00039B7A1 /* FlickrService.swift */,
 				D2D738ED1F27984300634180 /* ImageService.swift */,
 			);
-			path = Services;
+			path = Network;
 			sourceTree = "<group>";
 		};
-		D2D738F01F279A2B00634180 /* Controllers */ = {
+		D2D738F01F279A2B00634180 /* Image & Location Handling */ = {
 			isa = PBXGroup;
 			children = (
+				D29D67EE1F288D9B00389F90 /* ImageManager.swift */,
 				D2D738F31F279B8E00634180 /* LocationController.swift */,
 			);
-			path = Controllers;
+			path = "Image & Location Handling";
 			sourceTree = "<group>";
 		};
 		D2F630841F277F7B0039B7A1 = {
@@ -113,15 +132,10 @@
 		D2F6308F1F277F7B0039B7A1 /* FlickrGeoStream */ = {
 			isa = PBXGroup;
 			children = (
-				D2D738F01F279A2B00634180 /* Controllers */,
-				D2D738E81F2788A700634180 /* Models */,
-				D2F630901F277F7B0039B7A1 /* AppDelegate.swift */,
-				D2F630921F277F7B0039B7A1 /* ViewController.swift */,
-				D2F630941F277F7B0039B7A1 /* Main.storyboard */,
-				D2F630971F277F7B0039B7A1 /* Assets.xcassets */,
-				D2F630991F277F7B0039B7A1 /* LaunchScreen.storyboard */,
-				D2F6309C1F277F7B0039B7A1 /* Info.plist */,
-				D2D738EF1F27997A00634180 /* Services */,
+				D2D4CB6A1F2897C6001699D9 /* Application */,
+				D2D738F01F279A2B00634180 /* Image & Location Handling */,
+				D2D738EF1F27997A00634180 /* Network */,
+				D2D4CB671F28967B001699D9 /* UI */,
 			);
 			path = FlickrGeoStream;
 			sourceTree = "<group>";
@@ -236,11 +250,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F630931F277F7B0039B7A1 /* ViewController.swift in Sources */,
+				D2F630931F277F7B0039B7A1 /* PhotoStreamViewController.swift in Sources */,
 				D2F630911F277F7B0039B7A1 /* AppDelegate.swift in Sources */,
 				D2F630B11F2784C00039B7A1 /* FlickrService.swift in Sources */,
+				D29D67EF1F288D9B00389F90 /* ImageManager.swift in Sources */,
 				D2D738EE1F27984300634180 /* ImageService.swift in Sources */,
 				D2D738EA1F2788B800634180 /* FlickrSearchResult.swift in Sources */,
+				D2D4CB691F2896B8001699D9 /* PhotoStreamViewModel.swift in Sources */,
 				D2D738F21F279A3600634180 /* FlickrImageService.swift in Sources */,
 				D2D738F41F279B8E00634180 /* LocationController.swift in Sources */,
 			);
@@ -279,6 +295,7 @@
 				D2F6309A1F277F7B0039B7A1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -396,7 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F62JP9GW5J;
-				INFOPLIST_FILE = FlickrGeoStream/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FlickrGeoStream/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.ottenweller.FlickrGeoStream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -410,7 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F62JP9GW5J;
-				INFOPLIST_FILE = FlickrGeoStream/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FlickrGeoStream/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.ottenweller.FlickrGeoStream;
 				PRODUCT_NAME = "$(TARGET_NAME)";

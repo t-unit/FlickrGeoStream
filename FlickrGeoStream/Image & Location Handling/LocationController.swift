@@ -9,20 +9,36 @@
 import UIKit
 import CoreLocation
 
+extension Notification.Name {
+    
+    static let LocationControllerRunningChanged = Notification.Name("LocationControllerRunningChanged")
+}
+
 class LocationController: NSObject {
 
-    private(set) var isRunning = false
+    private(set) var isRunning = false {
+        didSet {
+            notificationCenter.post(name: .LocationControllerRunningChanged, object: self)
+        }
+    }
 
-    let radius: CLLocationDistance = 100
-    let locationManager = CLLocationManager()
-    private var currentRegion: CLRegion?
+    private let radius: CLLocationDistance = 100
+    private let locationManager = CLLocationManager()
+    private let notificationCenter = NotificationCenter.default
     private let flickrImageService: FlickrImageService
+    private let imageManager: ImageManager
+    private var currentRegion: CLRegion?
 
-    init(flickrImageService: FlickrImageService) {
+    init(flickrImageService: FlickrImageService, imageManager: ImageManager = ImageManager()) {
         self.flickrImageService = flickrImageService
+        self.imageManager = imageManager
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // not good for the battery
+    }
+    
+    convenience init(apiKey: String) {
+        self.init(flickrImageService: FlickrImageService(apiKey: apiKey))
     }
 
     func start() {
@@ -54,12 +70,11 @@ class LocationController: NSObject {
     }
     
     private func handle(location: CLLocation) {
-        flickrImageService.fetch(coordinate: location.coordinate) { image in
+        flickrImageService.fetch(coordinate: location.coordinate) { [weak self] image in
             guard let image = image else {
                 return // silent failing here
             }
-
-            print(image)
+            self?.imageManager.add(image: image)
         }
     }
 }

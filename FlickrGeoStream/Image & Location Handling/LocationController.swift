@@ -35,6 +35,7 @@ class LocationController: NSObject {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // not good for the battery
+        locationManager.requestAlwaysAuthorization() // there could be a better place to request authorization
     }
     
     convenience init(apiKey: String) {

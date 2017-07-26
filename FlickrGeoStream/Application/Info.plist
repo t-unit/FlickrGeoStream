@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Getting to know your location makes the stream possible</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Getting to know your location makes the stream possible</string>
 </dict>
 </plist>
